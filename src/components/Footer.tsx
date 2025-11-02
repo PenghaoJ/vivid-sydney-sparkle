@@ -1,5 +1,6 @@
 import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -20,10 +21,31 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold text-foreground mb-4">{t("快速链接", "Quick Links")}</h4>
             <ul className="space-y-2 text-muted-foreground">
-              <li><a href="#" className="hover:text-primary transition-colors">{t("活动地图", "Event Map")}</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">{t("演出时间表", "Schedule")}</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">{t("购票信息", "Tickets")}</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">{t("常见问题", "FAQ")}</a></li>
+              <li>
+                <a href="#" className="hover:text-primary transition-colors">
+                  {t("活动地图", "Event Map")}
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-primary transition-colors">
+                  {t("演出时间表", "Schedule")}
+                </a>
+              </li>
+              <li>
+                <Link to="/tickets" className="hover:text-primary transition-colors">
+                  {t("购票信息", "Tickets")}
+                </Link>
+              </li>
+              <li>
+                <Link to="/charging-status" className="hover:text-primary transition-colors">
+                  {t("充电状态", "Charging Status")}
+                </Link>
+              </li>
+              <li>
+                <a href="#" className="hover:text-primary transition-colors">
+                  {t("常见问题", "FAQ")}
+                </a>
+              </li>
             </ul>
           </div>
 
