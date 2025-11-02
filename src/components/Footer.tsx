@@ -1,6 +1,9 @@
 import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
+  
   return (
     <footer className="bg-card border-t border-border py-12 px-4">
       <div className="container mx-auto">
@@ -10,22 +13,22 @@ const Footer = () => {
               VIVID SYDNEY
             </h3>
             <p className="text-muted-foreground">
-              世界最大的光影音乐创意节
+              {t("世界最大的光影音乐创意节", "World's Largest Festival of Light, Music & Ideas")}
             </p>
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold text-foreground mb-4">快速链接</h4>
+            <h4 className="text-lg font-semibold text-foreground mb-4">{t("快速链接", "Quick Links")}</h4>
             <ul className="space-y-2 text-muted-foreground">
-              <li><a href="#" className="hover:text-primary transition-colors">活动地图</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">演出时间表</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">购票信息</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">常见问题</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">{t("活动地图", "Event Map")}</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">{t("演出时间表", "Schedule")}</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">{t("购票信息", "Tickets")}</a></li>
+              <li><a href="#" className="hover:text-primary transition-colors">{t("常见问题", "FAQ")}</a></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold text-foreground mb-4">关注我们</h4>
+            <h4 className="text-lg font-semibold text-foreground mb-4">{t("关注我们", "Follow Us")}</h4>
             <div className="flex gap-4">
               <a href="#" className="p-2 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground transition-all duration-300">
                 <Facebook className="w-5 h-5" />

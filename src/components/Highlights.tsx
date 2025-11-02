@@ -1,46 +1,50 @@
 import { Card } from "@/components/ui/card";
 import { Lightbulb, Music, Palette, Sparkles } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const highlights = [
+const getHighlights = (t: (zh: string, en: string) => string) => [
   {
     icon: Lightbulb,
-    title: "灯光装置",
-    description: "欣赏世界级的灯光艺术装置，点亮悉尼的夜空",
+    title: t("灯光装置", "Light Installations"),
+    description: t("欣赏世界级的灯光艺术装置，点亮悉尼的夜空", "Admire world-class light art installations illuminating Sydney's night sky"),
     color: "text-primary",
     shadow: "shadow-glow",
   },
   {
     icon: Music,
-    title: "音乐表演",
-    description: "享受来自全球顶尖艺术家的精彩现场表演",
+    title: t("音乐表演", "Music Performances"),
+    description: t("享受来自全球顶尖艺术家的精彩现场表演", "Enjoy spectacular live performances from world-class artists"),
     color: "text-secondary",
     shadow: "shadow-glow-cyan",
   },
   {
     icon: Palette,
-    title: "创意展示",
-    description: "探索前沿的数字艺术和互动体验",
+    title: t("创意展示", "Creative Showcases"),
+    description: t("探索前沿的数字艺术和互动体验", "Explore cutting-edge digital art and interactive experiences"),
     color: "text-accent",
     shadow: "shadow-glow-pink",
   },
   {
     icon: Sparkles,
-    title: "建筑投影",
-    description: "见证悉尼地标建筑的华丽光影变身",
+    title: t("建筑投影", "Building Projections"),
+    description: t("见证悉尼地标建筑的华丽光影变身", "Witness Sydney's iconic buildings transformed by spectacular projections"),
     color: "text-primary-glow",
     shadow: "shadow-glow",
   },
 ];
 
 const Highlights = () => {
+  const { t } = useLanguage();
+  const highlights = getHighlights(t);
+  
   return (
     <section className="py-20 px-4 bg-background">
       <div className="container mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-gradient-vivid bg-clip-text text-transparent">
-          活动亮点
+          {t("活动亮点", "Event Highlights")}
         </h2>
         <p className="text-center text-muted-foreground mb-12 text-lg">
-          探索Vivid Sydney的精彩内容
+          {t("探索Vivid Sydney的精彩内容", "Discover the magic of Vivid Sydney")}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
