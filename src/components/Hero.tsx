@@ -1,10 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, Languages } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/vivid-hero.jpg";
 
 const Hero = () => {
   const { language, toggleLanguage, t } = useLanguage();
+  const navigate = useNavigate();
   
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -55,6 +57,7 @@ const Hero = () => {
           <Button 
             size="lg" 
             variant="outline"
+            onClick={() => navigate('/tickets')}
             className="border-secondary text-secondary-foreground bg-background/20 backdrop-blur-sm hover:bg-secondary/20 hover:shadow-glow-cyan transition-all duration-300"
           >
             {t('购买门票', 'Buy Tickets')}
