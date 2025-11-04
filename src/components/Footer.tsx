@@ -3,7 +3,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
   const { t } = useLanguage();
-  
+
   return (
     <footer className="bg-card border-t border-border py-12 px-4">
       <div className="container mx-auto">
@@ -20,26 +20,54 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold text-foreground mb-4">{t("快速链接", "Quick Links")}</h4>
             <ul className="space-y-2 text-muted-foreground">
-              <li><a href="#" className="hover:text-primary transition-colors">{t("活动地图", "Event Map")}</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">{t("演出时间表", "Schedule")}</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">{t("购票信息", "Tickets")}</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">{t("常见问题", "FAQ")}</a></li>
+              <li>
+                <a
+                  href="https://www.google.com/maps?q=-33.858611,151.214167"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors"
+                >
+                  {t("活动地图", "Event Map")}
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-primary transition-colors">
+                  {t("演出时间表", "Schedule")}
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-primary transition-colors">
+                  {t("购票信息", "Tickets")}
+                </a>
+              </li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-lg font-semibold text-foreground mb-4">{t("关注我们", "Follow Us")}</h4>
             <div className="flex gap-4">
-              <a href="#" className="p-2 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+              <a
+                href="#"
+                className="p-2 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              >
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="p-2 rounded-full bg-muted hover:bg-accent hover:text-accent-foreground transition-all duration-300">
+              <a
+                href="#"
+                className="p-2 rounded-full bg-muted hover:bg-accent hover:text-accent-foreground transition-all duration-300"
+              >
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="p-2 rounded-full bg-muted hover:bg-secondary hover:text-secondary-foreground transition-all duration-300">
+              <a
+                href="#"
+                className="p-2 rounded-full bg-muted hover:bg-secondary hover:text-secondary-foreground transition-all duration-300"
+              >
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="p-2 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground transition-all duration-300">
+              <a
+                href="#"
+                className="p-2 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+              >
                 <Youtube className="w-5 h-5" />
               </a>
             </div>
